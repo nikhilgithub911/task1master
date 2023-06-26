@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation</title>
+  <style>
+
+    body{
+        /* Add the blur effect
+  filter: blur(8px);
+  -webkit-filter: blur(8px); */
+    }
+    span::before {
+        content: "Delhi";
+        color: green;
+        animation: animate infinite 10s;
+        padding-left: 10px;
+        display: flex;
+    }
+    
+  
+    @keyframes animate {
+  
+       15% {
+            content: "Delhi";
+            
+        }
+  
+        30% {
+            content: "Kerala";
+        }
+  
+        50% {
+            content: "Darjeeling";
+        }
+        75%{
+          content: "Ooty";
+        }
+        100%{
+          content: "Sikkim";
+        }
+    }
+ a:hover{
+  color: rgb(56, 199, 56);
+ }   
+*{
+  margin: 0;
+  padding: 0;
+  /* /* box-sizing: border-box; */
+} 
+.y{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+   background-color:rgba(39, 38, 38, 0.421);
+
+}
+ul li{
+  position:relative;
+  display: inline-block;
+ 
+  margin: 0 20px;
+  list-style: none;
+  padding: 1rem;
+  font-size:17px;
+}
+ul li a{
+  text-decoration: none;
+  
+  cursor: pointer;
+  color:white
+}
+.a{padding-left: 2rem ;
+  color: aliceblue;
+  /* animation: color-change 3s infinite; */
+  background-image: linear-gradient(to right, orange,white,green);
+  background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+.s{
+  position: relative;
+ text-align: center;
+ margin-top: 13%;
+ color: aliceblue;
+}
+/* @keyframes color-change {
+  0% { color: orangered; }
+  50% { color: white; }
+  100% { color: green; }
+  50% {font-size: 10px;}
+} */
+@keyframes bgcolor {
+    15% {
+        background-image: url("delhi.jpg");
+        height: 100vh;
+        width: 100vw;
+       
+    }
+
+    30% {
+        background-image: url("chennai.jpg");
+        height: 100vh;
+        width: 100vw;
+    }
+
+    50% {
+        background-image: url("gangtok.jpg");
+        height: 100vh;
+        width: 100vw;
+    }
+
+    75% {
+        background-image: url("kolkata.jpg");
+        height: 100vh;
+        width: 100vw;
+    }
+
+    100% {
+        background-image: url("sikkim.jpg");
+        height: 100vh;
+        width: 100vw;
+    }
+}
+/* button{
+  border-radius: 50px;
+  border: 2px solid black;
+  padding: 0.3rem;
+  width: 10%;
+}
+button:hover{
+  transform: rotate(20deg);
+  background-color: rgb(27, 228, 77);
+} */
+.glow{
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    /* background: rgb(252, 251, 251); */
+    background-color: rgba(17, 17, 17, 0.468);
+    cursor: pointer;
+    position: relative;
+    z-index:0;
+    border-radius: 10px;
+}
+.glow:before{
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.glow:active{
+    color: transparent;
+}
+.glow:active:after{
+    background: transparent;
+}
+.glow:hover:before{
+opacity: 1;
+}
+.glow:after{
+    z-index:-1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid green;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+@keyframes glowing{
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+body {
+  animation-name: bgcolor;
+  background-image: url("delhi.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 100vh;
+  
+  background-size: cover;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  }
+.d,h1{
+  color: aliceblue;
+  margin-top: 2rem;
+  justify-content: center;
+ display: flex;
+}
+
+@media screen and (max-width:480px ) {
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .v {
+    font-size: 0.75rem;
+    line-height: 1.5rem;
+  }
+  
+}
+@media screen and (max-width: 768px ) {
+  
+}
+
+
+
+</style>
+</head>
+<body>
+ 
+  <div class="y"><p class="a">MERA BHARAT</p>
+    <ul id="links">
+      <li><a href="#">Home</a></li>
+    <li><a href="#">Gallery</a>
+    <li><a href="#">About</a></li>
+  <li><a href="#">Contact</a></li></ul>
+    </div>
+<h3 class="s">Welcome to india</h3>
+<div class="v"><h1>DO COME AND VISIT<span class="txt"></span></h1></div>
+<p class="d">India once is not enough</p>
+<div class="g" style="text-align: center;margin-top: 2rem;"><button class="glow" style="height: 5vh;"cl>Learn More</button>
+  <button class="glow" style="height: 5vh;">Sign Up</button></div>
+</body>
+</html
